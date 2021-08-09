@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include  <bits/stdc++.h>
 
 using namespace std;
 
@@ -183,10 +184,36 @@ class FinalResult {
     public:
 
     FinalResult () {
+
         MyCalculate_Program calculateProgram;
         calculateProgram.CalculateResult();
+
+        for (int i = 1; i > 0; i++) {
+
+            char answer;
+
+            cout << "\n \n" << "Do you want to continue the Program" << endl;
+            cin >> answer;
+
+            switch (answer)
+            {
+            case 'Y':
+            case 'y':
+                cout << "\n";
+                calculateProgram.CalculateResult();
+                break;
+
+            case 'N':
+            case 'n':
+                i = -1;
+                cout << "Thanks for your Time";
+                break;
+            }
+        }
     }
 };
+
+
 
 int main () {
     UserInfo userInfo;
